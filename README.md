@@ -53,3 +53,5 @@ GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 
 [GPLv3](http://www.gnu.org/licenses/gpl-3.0.html)
+
+Copyright (c) 2012-2013 Vegard Hanssen <Vegard.Hanssen@menneske.no>
