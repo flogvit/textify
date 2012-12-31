@@ -45,3 +45,16 @@ module to global (npm install -g texify) you can probably find it in your path.
 	        [-t|--texturize <text>]
 	        [-r|--rot13 <text>]
 	        [-o|--rot <text> -n|--num <number>]
+
+## License
+
+GNU GENERAL PUBLIC LICENSE
+
+Version 3, 29 June 2007
+
+Copyright © 2007 Free Software Foundation, Inc. [fsf]{http://fsf.org/}
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, 
+but changing it is not allowed.
+
+[GPLv3]{http://www.gnu.org/licenses/gpl-3.0.html}
