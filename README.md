@@ -4,6 +4,11 @@ Node.js library to textify text.
 
 [![Build Status](https://travis-ci.org/flogvit/textify.png)](https://travis-ci.org/flogvit/textify)
 
+### texturize(text)
+
+Huamns can eaisly raed txet wehre the middle leettrs are shulffed.
+
+This will create text like that as result.
 
 ### toBinary(text, wrap)
 
@@ -24,3 +29,4 @@ You can use textify from cli too. The module will add textify as a program.
 
 	textify [-x|--tobinary <text> [-w|--wrap <number>]] 
 	        [-z|--frombinary <text>]
+	        [-t|--texturize <text>]

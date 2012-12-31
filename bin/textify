@@ -12,6 +12,10 @@ var argv = require('optimist')
 			.string('frombinary')
 			.string('z')
 			.describe('z', 'convert from binary')
+			.alias('t', 'texturize')
+			.string('t')
+			.string('texturize')
+			.describe('t', 'Texturize the text')
 			.argv;
 			
 var textify = require('../lib/textify');
@@ -21,4 +25,7 @@ if (argv.tobinary) {
 }
 if (argv.frombinary) {
 	console.log(textify.fromBinary(argv.frombinary));
+}
+if (argv.texturize) {
+	console.log(textify.texturize(argv.texturize));
 }

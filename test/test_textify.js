@@ -27,4 +27,27 @@ describe('textify', function() {
 			textify.fromBinary('01110100011010000110100101110011001000000110100101110011\n00100000011000010010000001110100011001010111001101110100').should.eql('this is a test');
 		});
 	});
+	
+	describe('#texturize()', function() {
+		it('should return the same for short words as a, be, let', function() {
+			textify.texturize('a').should.eql('a');
+			textify.texturize('be').should.eql('be');
+			textify.texturize('let').should.eql('let');
+		});
+		it('should not equal the same word', function() {
+			textify.texturize('testing').should.not.eql('testing');
+		});
+		it('should equal the same for split', function() {
+			textify.texturize('let it be').should.eql('let it be');
+		});
+		it('should remember sentence split', function() {
+			textify.texturize('let, it! be.').should.eql('let, it! be.');
+		});
+		it('should not be the same for sentence with words longer than 3 characters', function() {
+			textify.texturize('This is a test').should.not.eql('This is a test');
+		});
+		it('should return the same for 4 letters with same characters in the middle', function() {
+			textify.texturize('izzy').should.eql('izzy');
+		});
+	});
 });
