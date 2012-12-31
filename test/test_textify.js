@@ -50,4 +50,22 @@ describe('textify', function() {
 			textify.texturize('izzy').should.eql('izzy');
 		});
 	});
+	
+	describe('#rot13()', function() {
+		it('should return n for a', function() {
+			textify.rot13('a').should.eql('n');
+		});
+		it('should return Guvf vf n grfg', function() {
+			textify.rot13('This is a test').should.eql('Guvf vf n grfg');
+		});
+	});
+	
+	describe('#rot()', function() {
+		it('should return b for a on rot(1)', function() {
+			textify.rot('a', 1).should.eql('b');
+		});
+		it('should return the same for rot(13) as rot13()', function() {
+			textify.rot('This is a test', 13).should.eql(textify.rot13('This is a test'));
+		});
+	});
 });
