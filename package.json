@@ -20,6 +20,9 @@
   , "engines": {
   		"node": ">0.8"
     }
+  , "bin": { 
+  		"textify": "./bin/textify" 
+  	}
   , "licenses": [{
         "type": "GPLv3",
         "url": "http://www.gnu.org/licenses/gpl-3.0.txt"
