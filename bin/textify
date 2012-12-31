@@ -1,7 +1,24 @@
 #!/usr/bin/env node
-var argv = require('optimist').argv;
+
+var argv = require('optimist')
+			.usage('Textify text')
+			.alias('x', 'tobinary')
+			.string('tobinary')
+			.string('x')
+			.describe('x', 'convert to binary')
+			.alias('w', 'wrap')
+			.describe('w', 'wrap number')
+			.alias('z', 'frombinary')
+			.string('frombinary')
+			.string('z')
+			.describe('z', 'convert from binary')
+			.argv;
+			
 var textify = require('../lib/textify');
 
-if (argv.fb) {
-	console.log(textify.toBinary(argv.fb, argv.wrap ? argv.wrap : 0));
+if (argv.tobinary) {
+	console.log(textify.toBinary(argv.tobinary, argv.wrap ? argv.wrap : 0));
+}
+if (argv.frombinary) {
+	console.log(textify.fromBinary(argv.frombinary));
 }

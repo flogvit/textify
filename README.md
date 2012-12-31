@@ -14,3 +14,13 @@ to add a linebreak in the output. Without is (default 0) you will get all on one
 
 This will take the 8 bit binary text and return it as ascii text. All linebreaks and
 spaces will be removed.
+
+## Cli
+
+You can use textify from cli too. The module will add textify as a program.
+
+### Usage
+
+
+	textify [-x|--tobinary <text> [-w|--wrap <number>]] 
+	        [-z|--frombinary <text>]
