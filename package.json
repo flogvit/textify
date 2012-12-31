@@ -10,12 +10,15 @@
   , "scripts": {
     	"test": "mocha"
     } 
+  , "dependencies": {
+  		"optimist": ""
+    }
   , "devDependencies": {
     	  "mocha": ""
     	, "should": ""
     }
   , "engines": {
-  		"node": "*"
+  		"node": ">0.8"
     }
   , "licenses": [{
         "type": "GPLv3",

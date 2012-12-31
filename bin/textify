@@ -1,3 +1,7 @@
-/**
- * New node file
- */
+#!/usr/bin/env node
+var argv = require('optimist').argv;
+var textify = require('../lib/textify');
+
+if (argv.fb) {
+	console.log(textify.toBinary(argv.fb, argv.wrap ? argv.wrap : 0));
+}
