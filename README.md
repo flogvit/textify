@@ -32,6 +32,14 @@ This will return the rot13 of the text. "This is a test" = "Guvf vf n grfg"
 This will return the rot(num) of the text. If you use rot(1) a will be b etc.
 rot(text, 13) is the same as rot13(text)
 
+### toLeet(text)
+
+Will return l33t text in uppercase
+
+### fromLeet(text)
+
+Will convert l33t text to uppercase normal text.
+
 ## Cli
 
 You can use textify from cli too. The module will add textify as a program. If you add the
@@ -45,6 +53,8 @@ module to global (npm install -g texify) you can probably find it in your path.
 	        [-t|--texturize <text>]
 	        [-r|--rot13 <text>]
 	        [-o|--rot <text> -n|--num <number>]
+	        [-q|--toleet <text>]
+	        [-y|--fromleet <text>]
 
 ## License
 

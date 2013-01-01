@@ -68,4 +68,28 @@ describe('textify', function() {
 			textify.rot('This is a test', 13).should.eql(textify.rot13('This is a test'));
 		});
 	});
+	
+	describe('#toLeet()', function() {
+		it('should return correct word', function() {
+			textify.toLeet('test').should.eql('7357');
+		});
+		it('should return all changed', function() {
+			textify.toLeet('tisaeob').should.eql('7154308');
+		});
+		it('should return correct changed', function() {
+			textify.toLeet('abcdefghijklmnopqrstuvwxyz').should.eql('48CD3FGH1JKLMN0PQR57UVWXYZ');
+		});
+	});
+	
+	describe('#fromLeet()', function() {
+		it('should return correct word', function() {
+			textify.fromLeet('7357').should.eql('TEST');
+		});
+		it('should return all changed', function() {
+			textify.fromLeet('0134578').should.eql('OIEASTB');
+		});
+		it('should return correct changed', function() {
+			textify.fromLeet('48CD3FGH1JKLMN0PQR57UVWXYZ').should.eql('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+		});
+	});
 });

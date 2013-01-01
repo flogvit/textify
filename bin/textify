@@ -26,6 +26,14 @@ var argv = require('optimist')
 			.describe('o', 'rot the text')
 			.alias('n', 'num')
 			.describe('n', 'number input')
+			.alias('q', 'toleet')
+			.string('q')
+			.string('toleet')
+			.describe('q', 'to leet text')
+			.alias('y', 'fromleet')
+			.string('y')
+			.string('fromleet')
+			.describe('y', 'from leet text')
 			.argv;
 			
 var textify = require('../lib/textify');
@@ -44,4 +52,10 @@ if (argv.rot13) {
 }
 if (argv.rot && argv.num) {
 	console.log(textify.rot(argv.rot, argv.num));
+}
+if (argv.toleet) {
+	console.log(textify.toLeet(argv.toleet));
+}
+if (argv.fromleet) {
+	console.log(textify.fromLeet(argv.fromleet));
 }
