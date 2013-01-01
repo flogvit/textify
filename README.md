@@ -48,6 +48,15 @@ This will return the text in morse code
 
 This will return the morse code as text. You can use both / and | as word delimiters.
 
+### toHex(text, space)
+
+This will return the text as hex. If you set **space** to true, it will return a space
+between each numbers.
+
+### fromHex(text)
+
+This will return the text from the hex numbers
+
 ## Cli
 
 You can use textify from cli too. The module will add textify as a program. If you add the
@@ -65,6 +74,8 @@ module to global (npm install -g texify) you can probably find it in your path.
 	        [-y|--fromleet <text>]
 	        [-m|--tomorse <text>]
 	        [-k|--frommorse <text>]
+	        [-i|--tohex <text> [-s]]
+	        [-p|--fromhex <text>]
 
 ## License
 

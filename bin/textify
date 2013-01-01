@@ -42,6 +42,16 @@ var argv = require('optimist')
 			.string('k')
 			.string('frommorse')
 			.describe('k', 'from morse code')
+			.alias('i', 'tohex')
+			.string('i')
+			.string('tohex')
+			.boolean('s')
+			.describe('s', 'use space')
+			.describe('i', 'to hex code')
+			.alias('p', 'fromhex')
+			.string('p')
+			.string('fromhex')
+			.describe('p', 'from hex code')
 			.argv;
 			
 var textify = require('../lib/textify');
@@ -72,4 +82,10 @@ if (argv.tomorse) {
 }
 if (argv.frommorse) {
 	console.log(textify.fromMorse(argv.frommorse));
+}
+if (argv.tohex) {
+	console.log(textify.toHex(argv.tohex, argv.s ? true : false));
+}
+if (argv.fromhex) {
+	console.log(textify.fromHex(argv.fromhex));
 }
