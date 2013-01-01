@@ -5,6 +5,9 @@ var textify = require('../lib/textify');
 
 describe('textify', function() {
 	describe('#toBinary()', function() {
+		it('should return blank for no text', function() {
+			textify.toBinary().should.eql('');
+		});
 		it('should return 01100001 for a', function() {
 			textify.toBinary('a').should.eql('01100001');
 		});
@@ -17,6 +20,9 @@ describe('textify', function() {
 		
 	});
 	describe('#fromBinary()', function() {
+		it('should return blank for no text', function() {
+			textify.fromBinary().should.eql('');
+		});
 		it('should return a for 01100001', function() {
 			textify.fromBinary('01100001').should.eql('a');
 		});
@@ -29,6 +35,9 @@ describe('textify', function() {
 	});
 	
 	describe('#texturize()', function() {
+		it('should return blank for no text', function() {
+			textify.texturize().should.eql('');
+		});
 		it('should return the same for short words as a, be, let', function() {
 			textify.texturize('a').should.eql('a');
 			textify.texturize('be').should.eql('be');
@@ -52,6 +61,9 @@ describe('textify', function() {
 	});
 	
 	describe('#rot13()', function() {
+		it('should return blank for no text', function() {
+			textify.rot13().should.eql('');
+		});
 		it('should return n for a', function() {
 			textify.rot13('a').should.eql('n');
 		});
@@ -61,6 +73,12 @@ describe('textify', function() {
 	});
 	
 	describe('#rot()', function() {
+		it('should return blank for no text', function() {
+			textify.rot().should.eql('');
+		});
+		it('should return rot13 if not num is set', function() {
+			textify.rot('a').should.eql('n');
+		});
 		it('should return b for a on rot(1)', function() {
 			textify.rot('a', 1).should.eql('b');
 		});
@@ -70,6 +88,9 @@ describe('textify', function() {
 	});
 	
 	describe('#toLeet()', function() {
+		it('should return blank for no text', function() {
+			textify.toLeet().should.eql('');
+		});
 		it('should return correct word', function() {
 			textify.toLeet('test').should.eql('7357');
 		});
@@ -82,6 +103,9 @@ describe('textify', function() {
 	});
 	
 	describe('#fromLeet()', function() {
+		it('should return blank for no text', function() {
+			textify.fromLeet().should.eql('');
+		});
 		it('should return correct word', function() {
 			textify.fromLeet('7357').should.eql('TEST');
 		});
@@ -90,6 +114,37 @@ describe('textify', function() {
 		});
 		it('should return correct changed', function() {
 			textify.fromLeet('48CD3FGH1JKLMN0PQR57UVWXYZ').should.eql('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+		});
+	});
+	
+		
+	describe('#toMorse()', function() {
+		it('should return blank for no text', function() {
+			textify.toMorse().should.eql('');
+		});
+		it('should return the correct morse for a', function() {
+			textify.toMorse('a').should.eql('.-');
+		});
+		it('should return the correct morse for this is a test', function() {
+			textify.toMorse('This is a test').should.eql('- .... .. ... / .. ... / .- / - . ... -');
+		});
+		it('should handle linebreak correctly', function() {
+			textify.toMorse('This\nis\na\ntest').should.eql('- .... .. ...\n.. ...\n.-\n- . ... -');
+		});
+	});
+	
+	describe('#fromMorse()', function() {
+		it('should return blank for no text', function() {
+			textify.fromMorse().should.eql('');
+		});
+		it('should return a for the morse .-', function() {
+			textify.fromMorse('.-').should.eql('a');
+		});
+		it('should return correct line for morse this is a test', function() {
+			textify.fromMorse('- .... .. ... / .. ... / .- / - . ... -').should.eql('this is a test');
+		});
+		it('should handle linebreak correctly', function() {
+			textify.fromMorse('- .... .. ...\n.. ...\n.-\n- . ... -').should.eql('this\nis\na\ntest');
 		});
 	});
 });

@@ -40,6 +40,14 @@ Will return l33t text in uppercase
 
 Will convert l33t text to uppercase normal text.
 
+### toMorse(text)
+
+This will return the text in morse code
+
+### fromMorse(text)
+
+This will return the morse code as text. You can use both / and | as word delimiters.
+
 ## Cli
 
 You can use textify from cli too. The module will add textify as a program. If you add the
@@ -55,6 +63,8 @@ module to global (npm install -g texify) you can probably find it in your path.
 	        [-o|--rot <text> -n|--num <number>]
 	        [-q|--toleet <text>]
 	        [-y|--fromleet <text>]
+	        [-m|--tomorse <text>]
+	        [-k|--frommorse <text>]
 
 ## License
 

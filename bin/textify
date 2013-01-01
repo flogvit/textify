@@ -34,6 +34,14 @@ var argv = require('optimist')
 			.string('y')
 			.string('fromleet')
 			.describe('y', 'from leet text')
+			.alias('m', 'tomorse')
+			.string('m')
+			.string('tomorse')
+			.describe('m', 'to morse code')
+			.alias('k', 'frommorse')
+			.string('k')
+			.string('frommorse')
+			.describe('k', 'from morse code')
 			.argv;
 			
 var textify = require('../lib/textify');
@@ -58,4 +66,10 @@ if (argv.toleet) {
 }
 if (argv.fromleet) {
 	console.log(textify.fromLeet(argv.fromleet));
+}
+if (argv.tomorse) {
+	console.log(textify.toMorse(argv.tomorse));
+}
+if (argv.frommorse) {
+	console.log(textify.fromMorse(argv.frommorse));
 }
