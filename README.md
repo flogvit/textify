@@ -57,6 +57,16 @@ between each numbers.
 
 This will return the text from the hex numbers
 
+### toRobberLanguage(text)
+
+This will return the text in Robber Language
+
+test = totesostot
+
+### fromRobberLanguage(text)
+
+This will return the robber language text as plain text
+
 ## Cli
 
 You can use textify from cli too. The module will add textify as a program. If you add the
@@ -76,6 +86,8 @@ module to global (npm install -g texify) you can probably find it in your path.
 	        [-k|--frommorse <text>]
 	        [-i|--tohex <text> [-s]]
 	        [-p|--fromhex <text>]
+	        [-e|--torobber <text>]
+	        [-u|--fromrobber <text>]
 
 ## License
 

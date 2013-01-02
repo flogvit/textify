@@ -52,6 +52,14 @@ var argv = require('optimist')
 			.string('p')
 			.string('fromhex')
 			.describe('p', 'from hex code')
+			.alias('e', 'torobber')
+			.string('e')
+			.string('torobber')
+			.describe('e', 'to robber language')
+			.alias('u', 'fromrobber')
+			.string('u')
+			.string('fromrobber')
+			.describe('u', 'from robber language')
 			.argv;
 			
 var textify = require('../lib/textify');
@@ -88,4 +96,10 @@ if (argv.tohex) {
 }
 if (argv.fromhex) {
 	console.log(textify.fromHex(argv.fromhex));
+}
+if (argv.torobber) {
+	console.log(textify.toRobberLanguage(argv.torobber));
+}
+if (argv.fromrobber) {
+	console.log(textify.fromRobberLanguage(argv.fromrobber));
 }
