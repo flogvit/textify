@@ -4,6 +4,17 @@ Node.js library to textify text.
 
 [![Build Status](https://travis-ci.org/flogvit/textify.png)](https://travis-ci.org/flogvit/textify)
 
+You can use it like
+
+	var textify = require('textify');
+	console.log(textify.texturize('This is a test'));
+	
+Or you can use the cli command
+	
+	textify -t "This is a test"
+
+You can find the trello board at: [Trello](https://trello.com/board/node-anagram/50e04535a776c1812d001d07)
+
 ### texturize(text)
 
 Huamns can eaisly raed txet wehre the middle leettrs are shulffed.
