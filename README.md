@@ -78,6 +78,10 @@ test = totesostot
 
 This will return the robber language text as plain text
 
+### toPigLatin(text)
+
+This will return the text in Pig Latin
+
 ## Cli
 
 You can use textify from cli too. The module will add textify as a program. If you add the
@@ -99,6 +103,7 @@ module to global (npm install -g texify) you can probably find it in your path.
 	        [-p|--fromhex <text>]
 	        [-e|--torobber <text>]
 	        [-u|--fromrobber <text>]
+	        [-j|--topiglatin <text>]
 
 ## License
 

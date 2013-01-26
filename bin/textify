@@ -60,6 +60,9 @@ var argv = require('optimist')
 			.string('u')
 			.string('fromrobber')
 			.describe('u', 'from robber language')
+			.alias('j', 'topiglatin')
+			.string('j')
+			.describe('j', 'to pig latin')
 			.argv;
 			
 var textify = require('../lib/textify');
@@ -102,4 +105,7 @@ if (argv.torobber) {
 }
 if (argv.fromrobber) {
 	console.log(textify.fromRobberLanguage(argv.fromrobber));
+}
+if (argv.topiglatin) {
+	console.log(textify.toPigLatin(argv.topiglatin));
 }
