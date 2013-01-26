@@ -2,6 +2,7 @@
 require('should');
 require("assert");
 var textify = require('../lib/textify'); 
+textify.prototypeString();
 
 describe('textify', function() {
 	describe('#toBinary()', function() {
@@ -16,6 +17,9 @@ describe('textify', function() {
 		});
 		it('should return a long string without linebreak for this is a test', function() {
 			textify.toBinary('this is a test').should.eql("0111010001101000011010010111001100100000011010010111001100100000011000010010000001110100011001010111001101110100");
+		});
+		it('should return 01100001 for a on string object', function() {
+			'a'.toBinary().should.eql('01100001');
 		});
 		
 	});
@@ -32,6 +36,10 @@ describe('textify', function() {
 		it('should return this is a test without linebreak', function() {
 			textify.fromBinary('01110100011010000110100101110011001000000110100101110011\n00100000011000010010000001110100011001010111001101110100').should.eql('this is a test');
 		});
+		it('should return a for 01100001 on string object', function() {
+			'01100001'.fromBinary().should.eql('a');
+		});
+		
 	});
 	
 	describe('#texturize()', function() {
@@ -58,6 +66,12 @@ describe('textify', function() {
 		it('should return the same for 4 letters with same characters in the middle', function() {
 			textify.texturize('izzy').should.eql('izzy');
 		});
+		it('should return swap on middle letters with 4 letters', function() {
+			textify.texturize('test').should.eql('tset');
+		});
+		it('should return texturized text on string object', function() {
+			'test'.texturize().should.eql('tset');
+		});
 	});
 	
 	describe('#rot13()', function() {
@@ -70,6 +84,10 @@ describe('textify', function() {
 		it('should return Guvf vf n grfg', function() {
 			textify.rot13('This is a test').should.eql('Guvf vf n grfg');
 		});
+		it('should return n for a on String object', function() {
+			'a'.rot13().should.eql('n');
+		});
+		
 	});
 	
 	describe('#rot()', function() {
@@ -85,6 +103,10 @@ describe('textify', function() {
 		it('should return the same for rot(13) as rot13()', function() {
 			textify.rot('This is a test', 13).should.eql(textify.rot13('This is a test'));
 		});
+		it('should return b for a on rot(1) on String object', function() {
+			'a'.rot(1).should.eql('b');
+		});
+		
 	});
 	
 	describe('#toLeet()', function() {
@@ -100,6 +122,10 @@ describe('textify', function() {
 		it('should return correct changed', function() {
 			textify.toLeet('abcdefghijklmnopqrstuvwxyz').should.eql('48CD3FGH1JKLMN0PQR57UVWXYZ');
 		});
+		it('should return correct word on String object', function() {
+			'test'.toLeet().should.eql('7357');
+		});
+		
 	});
 	
 	describe('#fromLeet()', function() {
@@ -115,6 +141,10 @@ describe('textify', function() {
 		it('should return correct changed', function() {
 			textify.fromLeet('48CD3FGH1JKLMN0PQR57UVWXYZ').should.eql('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
 		});
+		it('should return correct word on String object', function() {
+			'7357'.fromLeet().should.eql('TEST');
+		});
+		
 	});
 	
 		
@@ -131,6 +161,10 @@ describe('textify', function() {
 		it('should handle linebreak correctly', function() {
 			textify.toMorse('This\nis\na\ntest').should.eql('- .... .. ...\n.. ...\n.-\n- . ... -');
 		});
+		it('should return the correct morse for a on String object', function() {
+			'a'.toMorse().should.eql('.-');
+		});
+		
 	});
 	
 	describe('#fromMorse()', function() {
@@ -146,6 +180,10 @@ describe('textify', function() {
 		it('should handle linebreak correctly', function() {
 			textify.fromMorse('- .... .. ...\n.. ...\n.-\n- . ... -').should.eql('this\nis\na\ntest');
 		});
+		it('should return a for the morse .- on String object', function() {
+			'.-'.fromMorse().should.eql('a');
+		});
+		
 	});
 	
 	describe('#toHex()', function() {
@@ -164,6 +202,10 @@ describe('textify', function() {
 		it('should return correct on linebreak', function() {
 			textify.toHex('This\nis\na\ntest').should.eql('54686973\n6973\n61\n74657374');
 		});
+		it('should return 41 for A on String object', function() {
+			'A'.toHex().should.eql('41');
+		});
+		
 	});
 	
 	describe('#fromHex()', function() {
@@ -186,6 +228,10 @@ describe('textify', function() {
 			textify.fromHex('f8').should.eql('ø');
 			textify.fromHex('F8').should.eql('ø');
 		});
+		it('should return A for 41 on String object', function() {
+			'41'.fromHex().should.eql('A');
+		});
+		
 	});
 	
 	describe('#toRobberLanguage()', function() {
@@ -204,6 +250,10 @@ describe('textify', function() {
 		it('should return linebreak etc', function() {
 			textify.toRobberLanguage('This.\nis\na\ntest').should.eql('Tothohisos.\nisos\na\ntotesostot');
 		});
+		it('should return bob on b on String object', function() {
+			'b'.toRobberLanguage().should.eql('bob');
+		});
+		
 	});
 	
 	describe('#fromRobberLanguage()', function() {
@@ -228,6 +278,35 @@ describe('textify', function() {
 		it('should return linebreak etc', function() {
 			textify.fromRobberLanguage('Tothohisos.\nisos\na\ntotesostot').should.eql('This.\nis\na\ntest');
 		});
+		it('should return b on bob on String object', function() {
+			'bob'.fromRobberLanguage().should.eql('b');
+		});
 		
 	});
+	
+	describe('#toPigLatin()', function() {
+		it('should return blank for no text', function() {
+			textify.toPigLatin().should.eql('');
+		});
+		it('should return ay on a', function() {
+			textify.toPigLatin('a').should.eql('ay');
+		});
+		it('should return hey on h', function() {
+			textify.toPigLatin('h').should.eql('hay');
+		});
+		it('should return esttey on test', function() {
+			textify.toPigLatin('test').should.eql('esttay');
+		});
+		it('should return correct on This is a test', function() {
+			textify.toPigLatin('This is a test').should.eql('Isthay isay ay esttay');
+		});
+		it('should return correct on egg', function() {
+			textify.toPigLatin('egg').should.eql('eggay');
+		});
+		it('should return ay on a on String object', function() {
+			'a'.toPigLatin().should.eql('ay');
+		});
+		
+	});
+	
 });
