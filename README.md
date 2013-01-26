@@ -13,6 +13,12 @@ Or you can use the cli command
 	
 	textify -t "This is a test"
 
+Or you can add it to String proto
+
+	var textify = require('textify');
+	textify.prototypeString();
+	console.log('This is a test'.texturize());
+
 You can find the trello board at: [Trello](https://trello.com/board/node-anagram/50e04535a776c1812d001d07)
 
 ### texturize(text)
