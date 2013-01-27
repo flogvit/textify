@@ -18,6 +18,14 @@ Or you can add it to String proto
 	var textify = require('textify');
 	textify.prototypeString();
 	console.log('This is a test'.texturize());
+	
+You can also prototype only spesific methods
+
+	var textify = require('textify');
+	textify.prototypeString('rot13');
+	console.log('This is a test'.rot13()); // Ok
+	console.log('This is a test'.rot(1));  // Error
+
 
 You can find the trello board at: [Trello](https://trello.com/board/node-anagram/50e04535a776c1812d001d07)
 
