@@ -62,7 +62,18 @@ var argv = require('optimist')
 			.describe('u', 'from robber language')
 			.alias('j', 'topiglatin')
 			.string('j')
+			.string('topiglatin')
 			.describe('j', 'to pig latin')
+			.string('reverse')
+			.describe('reverse', 'reverse text')
+			.string('trim')
+			.describe('trim', 'trim')
+			.string('stripNonAlpha')
+			.describe('stripNonAlpha', 'strip non alpha')
+			.string('stripVocals')
+			.describe('stripVocals', 'strip vocals')
+			.string('stripConsonants')
+			.describe('stripConsonants', 'strip consonants')
 			.argv;
 			
 var textify = require('../lib/textify');
@@ -108,4 +119,19 @@ if (argv.fromrobber) {
 }
 if (argv.topiglatin) {
 	console.log(textify.toPigLatin(argv.topiglatin));
+}
+if (argv.reverse) {
+	console.log(textify.reverse(argv.reverse));
+}
+if (argv.trim) {
+	console.log(textify.trim(argv.trim));
+}
+if (argv.stripNonAlpha) {
+	console.log(textify.stripNonAlpha(argv.stripNonAlpha));
+}
+if (argv.stripVocals) {
+	console.log(textify.stripVocals(argv.stripVocals));
+}
+if (argv.stripConsonants) {
+	console.log(textify.stripConsonants(argv.stripConsonants));
 }
