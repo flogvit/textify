@@ -41,15 +41,15 @@ describe('string', function() {
 		});
 	});
 
-	describe('#stripVocals()', function() {
+	describe('#stripVowels()', function() {
 		it('should return blank for no text', function() {
-			textify.stripVocals().should.eql('');
+			textify.stripVowels().should.eql('');
 		});
 		it('should return strip of abcdefghijklmnopqrstuvwxyz', function() {
-			textify.stripVocals('abcdefghijklmnopqrstuvwxyz').should.eql('bcdfghjklmnpqrstvwxz');
+			textify.stripVowels('abcdefghijklmnopqrstuvwxyz').should.eql('bcdfghjklmnpqrstvwxz');
 		});
 		it('should return strip of abcdefghij on String object', function() {
-			'abcdefghij'.stripVocals().should.eql('bcdfghj');
+			'abcdefghij'.stripVowels().should.eql('bcdfghj');
 		});
 	});
 

@@ -103,7 +103,7 @@ I've also included a string module which will do most of the standard string fun
 ### reverse(text)
 ### trim(text)
 ### stripNonAlpha(text)
-### stripVocals(text)
+### stripVowels(text)
 ### stripConsonants(text)
 
 ## Cli
@@ -128,6 +128,11 @@ module to global (npm install -g texify) you can probably find it in your path.
 	        [-e|--torobber <text>]
 	        [-u|--fromrobber <text>]
 	        [-j|--topiglatin <text>]
+	        [--reverse <text>]
+	        [--trim <text>]
+	        [--stripNonAlpha <text>]
+	        [--stripVowels <text>]
+	        [--stripConsonants <text>]
 
 ## License
 
