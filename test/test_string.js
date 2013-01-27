@@ -28,6 +28,30 @@ describe('string', function() {
 			' test '.trim().should.eql('test');
 		});
 	});
+	
+	describe('#ltrim()', function() {
+		it('should return blank for no text', function() {
+			textify.ltrim().should.eql('');
+		});
+		it('should return ltrim of test', function() {
+			textify.ltrim(' test ').should.eql('test ');
+		});
+		it('should return ltrim of test on String object', function() {
+			' test '.ltrim().should.eql('test ');
+		});
+	});
+
+	describe('#rtrim()', function() {
+		it('should return blank for no text', function() {
+			textify.rtrim().should.eql('');
+		});
+		it('should return rtrim of test', function() {
+			textify.rtrim(' test ').should.eql(' test');
+		});
+		it('should return rtrim of test on String object', function() {
+			' test '.rtrim().should.eql(' test');
+		});
+	});
 
 	describe('#stripNonAlpha()', function() {
 		it('should return blank for no text', function() {
