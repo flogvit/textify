@@ -4,7 +4,7 @@ require("assert");
 var textify = require('../lib/textify'); 
 textify.prototypeString();
 
-describe('textify', function() {
+describe('robberLanguage', function() {
 	describe('#toRobberLanguage()', function() {
 		it('should return blank for no text', function() {
 			textify.toRobberLanguage().should.eql('');

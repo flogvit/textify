@@ -4,7 +4,7 @@ require("assert");
 var textify = require('../lib/textify'); 
 textify.prototypeString();
 
-describe('textify', function() {
+describe('texturize', function() {
 	describe('#texturize()', function() {
 		it('should return blank for no text', function() {
 			textify.texturize().should.eql('');

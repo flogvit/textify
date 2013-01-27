@@ -3,7 +3,7 @@ require("assert");
 var textify = require('../lib/textify'); 
 textify.prototypeString();
 
-describe('textify', function() {
+describe('binary', function() {
 	describe('#toBinary()', function() {
 		it('should return blank for no text', function() {
 			textify.toBinary().should.eql('');

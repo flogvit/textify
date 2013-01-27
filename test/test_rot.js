@@ -4,7 +4,7 @@ require("assert");
 var textify = require('../lib/textify'); 
 textify.prototypeString();
 
-describe('textify', function() {
+describe('rot', function() {
 	describe('#rot13()', function() {
 		it('should return blank for no text', function() {
 			textify.rot13().should.eql('');

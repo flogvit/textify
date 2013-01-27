@@ -4,7 +4,7 @@ require("assert");
 var textify = require('../lib/textify'); 
 textify.prototypeString();
 
-describe('textify', function() {
+describe('morse', function() {
 	describe('#toMorse()', function() {
 		it('should return blank for no text', function() {
 			textify.toMorse().should.eql('');

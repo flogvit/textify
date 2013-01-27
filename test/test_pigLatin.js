@@ -4,7 +4,7 @@ require("assert");
 var textify = require('../lib/textify'); 
 textify.prototypeString();
 
-describe('textify', function() {
+describe('pigLatin', function() {
 	describe('#toPigLatin()', function() {
 		it('should return blank for no text', function() {
 			textify.toPigLatin().should.eql('');

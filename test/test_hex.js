@@ -3,7 +3,7 @@ require('should');
 require("assert");
 var textify = require('../lib/textify'); 
 textify.prototypeString();
-describe('textify', function() {
+describe('hex', function() {
 	describe('#toHex()', function() {
 		it('should return blank for no text', function() {
 			textify.toHex().should.eql('');
