@@ -88,6 +88,16 @@ This will return the robber language text as plain text
 
 This will return the text in Pig Latin
 
+## String
+
+I've also included a string module which will do most of the standard string functions missing
+
+### reverse(text)
+### trim(text)
+### stripNonAlpha(text)
+### stripVocals(text)
+### stripConsonants(text)
+
 ## Cli
 
 You can use textify from cli too. The module will add textify as a program. If you add the
